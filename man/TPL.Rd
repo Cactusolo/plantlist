@@ -24,6 +24,25 @@ A data frame containing Genus, Kew Genus, Kew Family, The plantlist Family (for 
 }
 \note{
 A small proportion of genus has been divided into several genera, even being placed into different families, this will lead to multiple entries for one enquiry. Pay attention to these issues.
+
+Please also pay attention to the following family names: 
+
+Palmae= Arecaceae
+
+Gramineae= Poaceae
+
+Leguminosae= Fabaceae
+
+Guttiferae= Clusiaceae
+
+Cruciferae= Brassicaceae
+
+Labiatae= Lamiaceae
+
+Compositae= Asteraceae
+
+Umbelliferae= Apiaceae
+
 }
 \references{
 Bremer, Birgitta, K. Bremer, Mark Chase, Mike Fay, James Reveal, Douglas Soltis, Pamella Soltis and Peter Stevens. (2009) "An update of the Angiosperm Phylogeny Group classification for the orders and families of flowering plants: APG III." Botanical Journal of the Linnean Society.
@@ -46,5 +65,31 @@ splist <- c( "Ranunculus japonicus", "Solanum nigrum", "Punica sp.",
              "Machilus", "Today", "####" ) 
 res <- TPL(splist)
 taxa.table(res)
+
+#### Note you can also search family number
+#### The following families are synonyms, I suggest to use 
+TPL("Arecaceae")
+TPL("Palmae")
+
+TPL("Poaceae")
+TPL("Gramineae")
+
+TPL("Fabaceae")
+TPL("Leguminosae")
+
+TPL("Clusiaceae")
+TPL("Guttiferae")
+
+TPL("Brassicaceae")
+TPL("Cruciferae")
+
+TPL("Lamiaceae")
+TPL("Labiatae")
+
+TPL("Asteraceae")
+TPL("Compositae")
+
+TPL("Apiaceae")
+TPL("Umbelliferae")
 
 }
