@@ -4,12 +4,21 @@ TPL <- function(plant.names = NULL){
     if(is.null(plant.names)){
         stop("At least one plant species or genus should be provided.")
     }
-    
+
     get.genus <- function(x){  ### Not only accept species , but also the genus name
+        
+        Cap <- function(x) {
+            paste(toupper(substring(x, 1, 1)), tolower(substring(x, 2)), sep = "")
+        }
+        
         if(is.data.frame(x)){
             x <- as.vector(x)
         }
-        first <- toupper(substr(x, 1, 1 ))  ## change the first alphabet to Upper Case.
+        
+        x <- gsub("^[[:space:]]+|[[:space:]]+$", "", x) ### Replace the space at the beginning and ending of the string.
+        x <- Cap(x)   ### Change the first letter to capital, and the rest in lower case. 
+        
+        first <- substr(x, 1, 1 )  ## change the first alphabet to Upper Case.
         start.point <- 2
         if(min(regexpr(" ", x)) > 1){
              end.point <- regexpr(" ", x)
